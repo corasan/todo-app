@@ -10,23 +10,27 @@ import UIKit
 
 class TodosView: UIViewController {
 	@IBOutlet weak var todosTable: UITableView!
+	@IBOutlet weak var todoInput: TextInput!
 	
 	var todos: [Todo] = []
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
 		todosTable.delegate = self
 		todosTable.dataSource = self
-
-		addTodo()
+		todosTable.keyboardDismissMode = .onDrag
 	}
 	
-	func addTodo() {
-		let todo1 = Todo(text: "My first todo")
-		let todo2 = Todo(text: "My second todo")
+	func addTodo(text: String) {
+		let todo = Todo(text: text)
 		
-		todos = [todo1, todo2]
+		todos.append(todo)
+	}
+	
+	@IBAction func addTodoBtn(_ sender: Any) {
+		let text: String = todoInput.text!
+		addTodo(text: text)
+		todosTable.reloadData()
 	}
 }
 

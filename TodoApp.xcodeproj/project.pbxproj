@@ -15,6 +15,7 @@
 		BAF013E6215208AC0031CF49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF013E4215208AC0031CF49 /* LaunchScreen.storyboard */; };
 		BAF013EF21520A1E0031CF49 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF013EE21520A1E0031CF49 /* TodoCell.swift */; };
 		BAF013F121520A7A0031CF49 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF013F021520A7A0031CF49 /* Todo.swift */; };
+		BAF013F4215297710031CF49 /* TextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF013F3215297710031CF49 /* TextInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		BAF013E7215208AC0031CF49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAF013EE21520A1E0031CF49 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
 		BAF013F021520A7A0031CF49 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		BAF013F3215297710031CF49 /* TextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		BAF013D8215208AA0031CF49 /* TodoApp */ = {
 			isa = PBXGroup;
 			children = (
+				BAF013F22152973B0031CF49 /* UI */,
 				BAF013ED215208C50031CF49 /* TodoView */,
 				BAF013D9215208AA0031CF49 /* AppDelegate.swift */,
 				BAF013DD215208AA0031CF49 /* SecondViewController.swift */,
@@ -77,8 +80,16 @@
 				BAF013DB215208AA0031CF49 /* TodoViewController.swift */,
 				BAF013EE21520A1E0031CF49 /* TodoCell.swift */,
 				BAF013F021520A7A0031CF49 /* Todo.swift */,
+				BAF013F3215297710031CF49 /* TextInput.swift */,
 			);
 			path = TodoView;
+			sourceTree = "<group>";
+		};
+		BAF013F22152973B0031CF49 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +168,7 @@
 				BAF013DC215208AA0031CF49 /* TodoViewController.swift in Sources */,
 				BAF013EF21520A1E0031CF49 /* TodoCell.swift in Sources */,
 				BAF013F121520A7A0031CF49 /* Todo.swift in Sources */,
+				BAF013F4215297710031CF49 /* TextInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

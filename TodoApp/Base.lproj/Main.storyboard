@@ -29,17 +29,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvz-z9-NE4">
-                                                    <rect key="frame" x="16" y="13.999999999999996" width="53" height="61.666666666666657"/>
+                                                    <rect key="frame" x="15" y="30" width="53" height="26.333333333333329"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="26.333333333333329" id="Z76-Sy-Kud"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Hvz-z9-NE4" firstAttribute="top" secondItem="ZBl-GW-xuC" secondAttribute="topMargin" constant="3" id="fqm-8O-Xhf"/>
+                                                <constraint firstItem="Hvz-z9-NE4" firstAttribute="top" secondItem="ZBl-GW-xuC" secondAttribute="topMargin" constant="19" id="fqm-8O-Xhf"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Hvz-z9-NE4" secondAttribute="trailing" id="khT-E3-5jD"/>
-                                                <constraint firstItem="Hvz-z9-NE4" firstAttribute="centerY" secondItem="ZBl-GW-xuC" secondAttribute="centerY" id="pyn-Z7-lli"/>
-                                                <constraint firstItem="Hvz-z9-NE4" firstAttribute="leading" secondItem="ZBl-GW-xuC" secondAttribute="leadingMargin" constant="1" id="rbg-HA-cHF"/>
+                                                <constraint firstItem="Hvz-z9-NE4" firstAttribute="centerY" secondItem="ZBl-GW-xuC" secondAttribute="centerY" constant="-1.6666666666666714" id="pyn-Z7-lli"/>
+                                                <constraint firstItem="Hvz-z9-NE4" firstAttribute="leading" secondItem="ZBl-GW-xuC" secondAttribute="leadingMargin" id="rbg-HA-cHF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -48,11 +51,35 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkb-1m-Mo0">
+                                <rect key="frame" x="323" y="97" width="36" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addTodoBtn:" destination="9pv-A4-QxB" eventType="touchUpInside" id="r33-Kl-CUE"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Todo" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="97B-Ef-KLv" customClass="TextInput" customModule="TodoApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="90" width="282" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Jq3-wM-P5B"/>
+                                    <constraint firstAttribute="height" constant="50" id="fM2-YQ-yIo"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="fOz-jv-1Os" secondAttribute="trailing" id="4gp-VC-ztt"/>
+                            <constraint firstItem="fOz-jv-1Os" firstAttribute="top" secondItem="97B-Ef-KLv" secondAttribute="bottom" constant="24" id="Cir-70-2nv"/>
+                            <constraint firstItem="97B-Ef-KLv" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="46" id="CzX-Ij-kbb"/>
                             <constraint firstItem="fOz-jv-1Os" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="D45-0l-AmB"/>
+                            <constraint firstItem="mkb-1m-Mo0" firstAttribute="centerY" secondItem="97B-Ef-KLv" secondAttribute="centerY" id="G84-mc-zPB"/>
+                            <constraint firstItem="mkb-1m-Mo0" firstAttribute="leading" secondItem="97B-Ef-KLv" secondAttribute="trailing" constant="25" id="Mau-M3-vh0"/>
+                            <constraint firstItem="mkb-1m-Mo0" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="Nsp-jE-k0E"/>
+                            <constraint firstItem="97B-Ef-KLv" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="16" id="eJT-G7-K7Z"/>
                             <constraint firstItem="fOz-jv-1Os" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="120" id="eo6-Qc-hHY"/>
                             <constraint firstItem="fOz-jv-1Os" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="vRC-TF-jmC"/>
                         </constraints>
@@ -60,12 +87,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="todoInput" destination="97B-Ef-KLv" id="xPf-4F-hvo"/>
                         <outlet property="todosTable" destination="fOz-jv-1Os" id="Eb2-So-JGT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
+            <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241378"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
