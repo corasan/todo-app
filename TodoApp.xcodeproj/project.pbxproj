@@ -18,6 +18,7 @@
 		BAF013F121520A7A0031CF49 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF013F021520A7A0031CF49 /* Todo.swift */; };
 		BAF013F4215297710031CF49 /* TextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF013F3215297710031CF49 /* TextInput.swift */; };
 		BAF013F62152A17C0031CF49 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAF013F52152A17C0031CF49 /* GoogleService-Info.plist */; };
+		BAF013F92152A97D0031CF49 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF013F82152A97D0031CF49 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		BAF013F021520A7A0031CF49 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		BAF013F3215297710031CF49 /* TextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInput.swift; sourceTree = "<group>"; };
 		BAF013F52152A17C0031CF49 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BAF013F82152A97D0031CF49 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		BAF013D8215208AA0031CF49 /* TodoApp */ = {
 			isa = PBXGroup;
 			children = (
+				BAF013F72152A5530031CF49 /* LoginView */,
 				BAF013F52152A17C0031CF49 /* GoogleService-Info.plist */,
 				BAF013F22152973B0031CF49 /* UI */,
 				BAF013ED215208C50031CF49 /* TodoView */,
@@ -109,6 +112,14 @@
 			children = (
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		BAF013F72152A5530031CF49 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				BAF013F82152A97D0031CF49 /* LoginViewController.swift */,
+			);
+			path = LoginView;
 			sourceTree = "<group>";
 		};
 		CAC379F669CF6712BCD1C7D9 /* Frameworks */ = {
@@ -260,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAF013F92152A97D0031CF49 /* LoginViewController.swift in Sources */,
 				BAF013DE215208AA0031CF49 /* SecondViewController.swift in Sources */,
 				BAF013DA215208AA0031CF49 /* AppDelegate.swift in Sources */,
 				BAF013DC215208AA0031CF49 /* TodoViewController.swift in Sources */,
