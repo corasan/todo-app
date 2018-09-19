@@ -7,15 +7,27 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 
-
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
+		FirebaseApp.configure()
+		
+		// If user is logged in, redirect to the main view
+		let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+		let mainViewController = mainStoryBoard.instantiateViewController(withIdentifier: "Main") as! UITabBarController
+		let user = Auth.auth().currentUser
+	
+		if user != nil {
+			self.window!.rootViewController = mainViewController
+			self.window!.makeKeyAndVisible()
+		}
+
 		return true
 	}
 
@@ -40,7 +52,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func applicationWillTerminate(_ application: UIApplication) {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	}
-
-
 }
 

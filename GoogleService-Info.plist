@@ -7,34 +7,34 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>619036807075-kgajg4in00b5frfkgn1p63629f0e7hjr.apps.googleusercontent.com</string>
+	<string>1046319618659-ld2d5qjuev4uh1uk5hu4qrsml3j4trm7.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.619036807075-kgajg4in00b5frfkgn1p63629f0e7hjr</string>
+	<string>com.googleusercontent.apps.1046319618659-ld2d5qjuev4uh1uk5hu4qrsml3j4trm7</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBOqAh8PrDwlxiYs4rYBy-EPG-IMue-O9A</string>
+	<string>AIzaSyBq14kvdRHHIWnpDi-x3EK_xBESA2Z5SL0</string>
 	<key>GCM_SENDER_ID</key>
-	<string>619036807075</string>
+	<string>1046319618659</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.corasan.TodoApp</string>
 	<key>PROJECT_ID</key>
-	<string>todo-ios-b7b83</string>
+	<string>todoapp-7f025</string>
 	<key>STORAGE_BUCKET</key>
-	<string>todo-ios-b7b83.appspot.com</string>
+	<string>todoapp-7f025.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:619036807075:ios:3c3fe87e291dcde8</string>
+	<string>1:1046319618659:ios:f942e6b7a67513ff</string>
 	<key>DATABASE_URL</key>
-	<string>https://todo-ios-b7b83.firebaseio.com</string>
+	<string>https://todoapp-7f025.firebaseio.com</string>
 </dict>
 </plist>

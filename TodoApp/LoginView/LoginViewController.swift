@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
 	@IBOutlet weak var email: UITextField!
@@ -27,7 +28,17 @@ class LoginViewController: UIViewController {
 
 	func login(_ email: String, _ password: String) {
 		if (email != "" && password != "") {
-			// something
+			Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
+				if let error = error {
+					self.showAlert(message: "Error login in.")
+					print("Error Message: \(error)")
+					return
+				}
+				let user = authResult!.user
+				print("Logged in User: \(user.email)")
+				
+				self.navigateToMainInterface()
+			}
 		} else {
 			showAlert(message: "Email and password fields cannot be empty.")
 		}
@@ -38,5 +49,15 @@ class LoginViewController: UIViewController {
 		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 		
 		self.present(alert, animated: true)
+	}
+	
+	private func navigateToMainInterface() {
+		let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+		guard let mainNavigation = mainStoryBoard.instantiateViewController(withIdentifier: "Main") as?
+			UITabBarController else {
+				return
+		}
+		
+		present(mainNavigation, animated: true, completion: nil)
 	}
 }
