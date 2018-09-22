@@ -11,7 +11,7 @@
 		BA6BE5B42152B76400BAEB59 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA6BE5B32152B76400BAEB59 /* GoogleService-Info.plist */; };
 		BAF013DA215208AA0031CF49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF013D9215208AA0031CF49 /* AppDelegate.swift */; };
 		BAF013DC215208AA0031CF49 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF013DB215208AA0031CF49 /* TodoViewController.swift */; };
-		BAF013DE215208AA0031CF49 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF013DD215208AA0031CF49 /* SecondViewController.swift */; };
+		BAF013DE215208AA0031CF49 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF013DD215208AA0031CF49 /* ProfileViewController.swift */; };
 		BAF013E1215208AA0031CF49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF013DF215208AA0031CF49 /* Main.storyboard */; };
 		BAF013E3215208AC0031CF49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAF013E2215208AC0031CF49 /* Assets.xcassets */; };
 		BAF013E6215208AC0031CF49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF013E4215208AC0031CF49 /* LaunchScreen.storyboard */; };
@@ -29,7 +29,7 @@
 		BAF013D6215208AA0031CF49 /* TodoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF013D9215208AA0031CF49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAF013DB215208AA0031CF49 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
-		BAF013DD215208AA0031CF49 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		BAF013DD215208AA0031CF49 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BAF013E0215208AA0031CF49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BAF013E2215208AC0031CF49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAF013E5215208AC0031CF49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,6 +61,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BA5CEB452156EBFE00610121 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BAF013DD215208AA0031CF49 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		BAF013CD215208AA0031CF49 = {
 			isa = PBXGroup;
 			children = (
@@ -82,12 +90,12 @@
 		BAF013D8215208AA0031CF49 /* TodoApp */ = {
 			isa = PBXGroup;
 			children = (
+				BA5CEB452156EBFE00610121 /* Profile */,
 				BA6BE5B32152B76400BAEB59 /* GoogleService-Info.plist */,
 				BAF013F72152A5530031CF49 /* LoginView */,
 				BAF013F22152973B0031CF49 /* UI */,
 				BAF013ED215208C50031CF49 /* TodoView */,
 				BAF013D9215208AA0031CF49 /* AppDelegate.swift */,
-				BAF013DD215208AA0031CF49 /* SecondViewController.swift */,
 				BAF013DF215208AA0031CF49 /* Main.storyboard */,
 				BAF013E2215208AC0031CF49 /* Assets.xcassets */,
 				BAF013E4215208AC0031CF49 /* LaunchScreen.storyboard */,
@@ -272,7 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAF013F92152A97D0031CF49 /* LoginViewController.swift in Sources */,
-				BAF013DE215208AA0031CF49 /* SecondViewController.swift in Sources */,
+				BAF013DE215208AA0031CF49 /* ProfileViewController.swift in Sources */,
 				BAF013DA215208AA0031CF49 /* AppDelegate.swift in Sources */,
 				BAF013DC215208AA0031CF49 /* TodoViewController.swift in Sources */,
 				BAF013EF21520A1E0031CF49 /* TodoCell.swift in Sources */,
