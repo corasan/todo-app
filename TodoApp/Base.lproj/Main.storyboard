@@ -29,7 +29,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvz-z9-NE4">
-                                                    <rect key="frame" x="15" y="30" width="53" height="26.333333333333329"/>
+                                                    <rect key="frame" x="15" y="31" width="53" height="26.333333333333332"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="26.333333333333329" id="Z76-Sy-Kud"/>
                                                     </constraints>
@@ -39,10 +39,9 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Hvz-z9-NE4" firstAttribute="top" secondItem="ZBl-GW-xuC" secondAttribute="topMargin" constant="19" id="fqm-8O-Xhf"/>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Hvz-z9-NE4" secondAttribute="trailing" id="khT-E3-5jD"/>
-                                                <constraint firstItem="Hvz-z9-NE4" firstAttribute="centerY" secondItem="ZBl-GW-xuC" secondAttribute="centerY" constant="-1.6666666666666714" id="pyn-Z7-lli"/>
-                                                <constraint firstItem="Hvz-z9-NE4" firstAttribute="leading" secondItem="ZBl-GW-xuC" secondAttribute="leadingMargin" id="rbg-HA-cHF"/>
+                                                <constraint firstItem="Hvz-z9-NE4" firstAttribute="leading" secondItem="ZBl-GW-xuC" secondAttribute="leadingMargin" id="E2O-cM-HC1"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Hvz-z9-NE4" secondAttribute="trailing" constant="20" symbolic="YES" id="H9d-vo-n6I"/>
+                                                <constraint firstItem="Hvz-z9-NE4" firstAttribute="top" secondItem="ZBl-GW-xuC" secondAttribute="topMargin" constant="20" id="q2t-ZE-dxe"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -50,6 +49,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="GsR-eV-CgC"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="bIL-Wr-e5J"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkb-1m-Mo0">
                                 <rect key="frame" x="323" y="97" width="36" height="36"/>

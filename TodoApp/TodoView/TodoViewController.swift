@@ -7,30 +7,53 @@
 //
 
 import UIKit
+import Firebase
 
 class TodosView: UIViewController {
 	@IBOutlet weak var todosTable: UITableView!
 	@IBOutlet weak var todoInput: TextInput!
 	
 	var todos: [Todo] = []
+	var DB: Firestore!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		todosTable.delegate = self
-		todosTable.dataSource = self
 		todosTable.keyboardDismissMode = .onDrag
+		todosTable.tableFooterView = UIView()
+		
+		let settings = FirestoreSettings()
+		Firestore.firestore().settings = settings
+		DB = Firestore.firestore()
+		
+		listenForTodos()
 	}
 	
-	func addTodo(text: String) {
-		let todo = Todo(text: text)
+	func newTodo(_ text: String, _ userId: String) -> Todo {
+		let todo = Todo(text: text, userId: userId)
 		
-		todos.append(todo)
+		return todo
 	}
 	
 	@IBAction func addTodoBtn(_ sender: Any) {
-		let text: String = todoInput.text!
-		addTodo(text: text)
-		todosTable.reloadData()
+		let textInput = todoInput.text!
+		let user = Auth.auth().currentUser
+		DB.collection("todos").addDocument(data: [
+			"text": textInput,
+			"user_id": user!.uid,
+			"state": "to do"
+		])
+	}
+	
+	private func listenForTodos() {
+		DB.collection("todos").addSnapshotListener { querySnapshot, error in
+			guard let documents = querySnapshot?.documents else {
+				print("Error!! \(error!)")
+				return
+			}
+			
+			self.todos = documents.map { self.newTodo($0["text"] as! String, $0["user_id"] as! String) }
+			self.todosTable.reloadData()
+		}
 	}
 }
 

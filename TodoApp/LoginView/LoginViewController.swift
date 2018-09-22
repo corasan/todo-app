@@ -34,9 +34,6 @@ class LoginViewController: UIViewController {
 					print("Error Message: \(error)")
 					return
 				}
-				let user = authResult!.user
-				print("Logged in User: \(user.email)")
-				
 				self.navigateToMainInterface()
 			}
 		} else {
