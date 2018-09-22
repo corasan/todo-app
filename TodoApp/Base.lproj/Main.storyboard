@@ -162,18 +162,23 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="git-0Q-5Sd">
-                                <rect key="frame" x="163" y="417" width="49" height="38"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <rect key="frame" x="16" y="417" width="342" height="55"/>
+                                <color key="backgroundColor" red="0.25623630190000002" green="0.76838906080000002" blue="0.94719622459999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="qBw-ip-WfB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginBtn:" destination="cNj-6m-wty" eventType="touchUpInside" id="nxM-D7-Tkd"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TodoApp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNs-3o-MRO">
-                                <rect key="frame" x="141" y="689" width="93" height="29"/>
+                                <rect key="frame" x="141" y="689" width="92" height="29"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -182,15 +187,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="atc-pV-A9Q" firstAttribute="trailing" secondItem="4Au-15-zdB" secondAttribute="trailing" id="1Z8-t0-K0R"/>
+                            <constraint firstItem="git-0Q-5Sd" firstAttribute="leading" secondItem="atc-pV-A9Q" secondAttribute="leading" id="2gE-BR-DAE"/>
                             <constraint firstItem="atc-pV-A9Q" firstAttribute="leading" secondItem="xCd-Wo-SJg" secondAttribute="leadingMargin" id="4FE-OB-WiM"/>
-                            <constraint firstItem="NZ3-I7-sMX" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="git-0Q-5Sd" secondAttribute="trailing" symbolic="YES" id="7kz-cF-On1"/>
+                            <constraint firstItem="git-0Q-5Sd" firstAttribute="centerX" secondItem="iNs-3o-MRO" secondAttribute="centerX" id="5nl-L5-V0C"/>
                             <constraint firstItem="atc-pV-A9Q" firstAttribute="leading" secondItem="4Au-15-zdB" secondAttribute="leading" id="8RC-H5-zxX"/>
                             <constraint firstItem="atc-pV-A9Q" firstAttribute="top" secondItem="4Au-15-zdB" secondAttribute="bottom" constant="28" id="BmY-9g-aay"/>
                             <constraint firstItem="atc-pV-A9Q" firstAttribute="top" secondItem="xCd-Wo-SJg" secondAttribute="top" constant="320" id="GfH-bj-HXQ"/>
-                            <constraint firstItem="iNs-3o-MRO" firstAttribute="centerX" secondItem="git-0Q-5Sd" secondAttribute="centerX" id="Ivp-NH-EPQ"/>
-                            <constraint firstItem="git-0Q-5Sd" firstAttribute="leading" secondItem="NZ3-I7-sMX" secondAttribute="leading" constant="163" id="W1z-oB-W9h"/>
+                            <constraint firstItem="git-0Q-5Sd" firstAttribute="top" secondItem="atc-pV-A9Q" secondAttribute="bottom" constant="47" id="JyR-6w-zix"/>
                             <constraint firstItem="iNs-3o-MRO" firstAttribute="leading" secondItem="NZ3-I7-sMX" secondAttribute="leading" constant="141" id="cgq-Mw-UTN"/>
-                            <constraint firstItem="git-0Q-5Sd" firstAttribute="top" secondItem="atc-pV-A9Q" secondAttribute="bottom" constant="47" id="dWL-BM-aTH"/>
                             <constraint firstItem="NZ3-I7-sMX" firstAttribute="bottom" secondItem="iNs-3o-MRO" secondAttribute="bottom" constant="60" id="fhT-eK-lHR"/>
                             <constraint firstItem="atc-pV-A9Q" firstAttribute="trailing" secondItem="xCd-Wo-SJg" secondAttribute="trailingMargin" id="qCM-mo-g0D"/>
                         </constraints>
@@ -198,6 +202,7 @@
                     </view>
                     <connections>
                         <outlet property="email" destination="4Au-15-zdB" id="Rtj-9e-dd6"/>
+                        <outlet property="loginBtn" destination="git-0Q-5Sd" id="QlH-hg-6Gs"/>
                         <outlet property="password" destination="atc-pV-A9Q" id="gFT-aP-Hv4"/>
                     </connections>
                 </viewController>

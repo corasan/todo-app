@@ -12,11 +12,13 @@ import Firebase
 class LoginViewController: UIViewController {
 	@IBOutlet weak var email: UITextField!
 	@IBOutlet weak var password: UITextField!
+	@IBOutlet weak var loginBtn: UIButton!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		// Do any additional setup after loading the view.
+		loginBtn.layer.cornerRadius = 6
+		loginBtn.clipsToBounds = true
 	}
 	
 	@IBAction func loginBtn(_ sender: Any) {
