@@ -48,7 +48,9 @@ class TodosView: UIViewController {
 	}
 	
 	private func listenForTodos() {
-		DB.collection("todos").addSnapshotListener { querySnapshot, error in
+		let user = Auth.auth().currentUser
+
+		DB.collection("todos").whereField("user_id", isEqualTo: user!.uid).addSnapshotListener { querySnapshot, error in
 			guard let documents = querySnapshot?.documents else {
 				print("Error!! \(error!)")
 				return
