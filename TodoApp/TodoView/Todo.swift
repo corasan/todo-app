@@ -10,10 +10,12 @@ import Foundation
 
 class Todo {
 	var text: String
-	var done: Bool
+	var state: Bool
+	var userId: String
 	
-	init(text: String, done: Bool = false) {
+	init(text: String, userId: String, state: Bool = false) {
 		self.text = text
-		self.done = done
+		self.userId = userId
+		self.state = state
 	}
 }
