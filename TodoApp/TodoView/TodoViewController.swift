@@ -12,6 +12,7 @@ import Firebase
 class TodosView: UIViewController {
 	@IBOutlet weak var todosTable: UITableView!
 	@IBOutlet weak var todoInput: TextInput!
+	@IBOutlet weak var addTodoBtn: UIButton!
 	
 	var todos: [Todo] = []
 	var DB: Firestore!
@@ -20,6 +21,8 @@ class TodosView: UIViewController {
 		super.viewDidLoad()
 		todosTable.keyboardDismissMode = .onDrag
 		todosTable.tableFooterView = UIView()
+		addTodoBtn.layer.cornerRadius = 6
+		addTodoBtn.clipsToBounds = true
 		
 		let settings = FirestoreSettings()
 		Firestore.firestore().settings = settings

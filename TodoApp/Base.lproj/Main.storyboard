@@ -29,11 +29,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvz-z9-NE4">
-                                                    <rect key="frame" x="15" y="31" width="53" height="26.333333333333332"/>
+                                                    <rect key="frame" x="15" y="31" width="49" height="26.333333333333329"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="26.333333333333329" id="Z76-Sy-Kud"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -54,42 +54,46 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="bIL-Wr-e5J"/>
                                 </connections>
                             </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Todo" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="97B-Ef-KLv" customClass="TextInput" customModule="TodoApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="90" width="276" height="50"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkb-1m-Mo0">
-                                <rect key="frame" x="323" y="97" width="36" height="36"/>
+                                <rect key="frame" x="304" y="90" width="55" height="50"/>
+                                <color key="backgroundColor" red="0.25623630190743052" green="0.76838906083896308" blue="0.94719622461928932" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="DeW-d5-gYE"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="addTodoBtn:" destination="9pv-A4-QxB" eventType="touchUpInside" id="r33-Kl-CUE"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Todo" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="97B-Ef-KLv" customClass="TextInput" customModule="TodoApp" customModuleProvider="target">
-                                <rect key="frame" x="16" y="90" width="282" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Jq3-wM-P5B"/>
-                                    <constraint firstAttribute="height" constant="50" id="fM2-YQ-yIo"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="mkb-1m-Mo0" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="02M-FK-7wk"/>
                             <constraint firstAttribute="trailing" secondItem="fOz-jv-1Os" secondAttribute="trailing" id="4gp-VC-ztt"/>
                             <constraint firstItem="fOz-jv-1Os" firstAttribute="top" secondItem="97B-Ef-KLv" secondAttribute="bottom" constant="24" id="Cir-70-2nv"/>
                             <constraint firstItem="97B-Ef-KLv" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="46" id="CzX-Ij-kbb"/>
                             <constraint firstItem="fOz-jv-1Os" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="D45-0l-AmB"/>
-                            <constraint firstItem="mkb-1m-Mo0" firstAttribute="centerY" secondItem="97B-Ef-KLv" secondAttribute="centerY" id="G84-mc-zPB"/>
-                            <constraint firstItem="mkb-1m-Mo0" firstAttribute="leading" secondItem="97B-Ef-KLv" secondAttribute="trailing" constant="25" id="Mau-M3-vh0"/>
-                            <constraint firstItem="mkb-1m-Mo0" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="Nsp-jE-k0E"/>
+                            <constraint firstItem="mkb-1m-Mo0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="97B-Ef-KLv" secondAttribute="trailing" constant="8" symbolic="YES" id="FpS-Y9-jdx"/>
+                            <constraint firstItem="mkb-1m-Mo0" firstAttribute="centerY" secondItem="97B-Ef-KLv" secondAttribute="centerY" id="Hn0-PQ-c60"/>
+                            <constraint firstItem="mkb-1m-Mo0" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="46" id="QXH-vr-yXj"/>
                             <constraint firstItem="97B-Ef-KLv" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="16" id="eJT-G7-K7Z"/>
                             <constraint firstItem="fOz-jv-1Os" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="120" id="eo6-Qc-hHY"/>
+                            <constraint firstItem="mkb-1m-Mo0" firstAttribute="leading" secondItem="97B-Ef-KLv" secondAttribute="trailing" constant="12" id="mzi-Az-Pjx"/>
                             <constraint firstItem="fOz-jv-1Os" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="vRC-TF-jmC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="addTodoBtn" destination="mkb-1m-Mo0" id="db7-iM-6cA"/>
                         <outlet property="todoInput" destination="97B-Ef-KLv" id="xPf-4F-hvo"/>
                         <outlet property="todosTable" destination="fOz-jv-1Os" id="Eb2-So-JGT"/>
                     </connections>
