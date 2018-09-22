@@ -35,9 +35,13 @@ class TodosView: UIViewController {
 	}
 	
 	@IBAction func addTodoBtn(_ sender: Any) {
-//		let text: String = todoInput.text!
-//		addTodo(text: text)
-		todosTable.reloadData()
+		let textInput = todoInput.text!
+		let user = Auth.auth().currentUser
+		DB.collection("todos").addDocument(data: [
+			"text": textInput,
+			"user_id": user!.uid,
+			"state": "to do"
+		])
 	}
 	
 	private func listenForTodos() {

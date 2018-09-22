@@ -11,11 +11,11 @@ import Foundation
 class Todo {
 	var text: String
 	var state: Bool
-	var userId: String
+	var user_id: String
 	
 	init(text: String, userId: String, state: Bool = false) {
 		self.text = text
-		self.userId = userId
+		self.user_id = userId
 		self.state = state
 	}
 }
