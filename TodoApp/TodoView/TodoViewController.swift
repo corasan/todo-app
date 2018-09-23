@@ -31,19 +31,22 @@ class TodosView: UIViewController {
 		listenForTodos()
 	}
 	
-	func newTodo(_ text: String, _ userId: String) -> Todo {
-		let todo = Todo(text: text, userId: userId)
-		
-		return todo
-	}
-	
 	@IBAction func addTodoBtn(_ sender: Any) {
+		let newDoc = DB.collection("todos").document()
 		let textInput = todoInput.text!
 		let user = Auth.auth().currentUser
-		DB.collection("todos").addDocument(data: [
-			"text": textInput,
-			"user_id": user!.uid,
-			"state": "to do"
+		let id = newDoc.documentID
+		let todo = Todo(textInput, user!.uid, id)
+		
+		addTodo(todo, newDoc)
+	}
+	
+	private func addTodo(_ todo: Todo, _ newDoc: DocumentReference) {
+		newDoc.setData([
+			"text": todo.text,
+			"user_id": todo.userId,
+			"id": todo.id,
+			"state": todo.state
 		])
 	}
 	
@@ -56,10 +59,23 @@ class TodosView: UIViewController {
 				return
 			}
 			
-			self.todos = documents.map { self.newTodo($0["text"] as! String, $0["user_id"] as! String) }
+			// If there was no error, take each Todo in the DB and make it an instance of Todo class
+			self.todos = documents.map {
+				let text = $0["text"] as! String
+				let userId = $0["user_id"] as! String
+//				let id = $0["id"] as! String
+
+				return Todo(text, userId, "1")
+			}
 			self.todosTable.reloadData()
 		}
 	}
+	
+//	private func deleteTodo(at indexPath: IndexPath) {
+//		let action = UIContextualAction(style: .normal, title: "Delete") { (action, view, completion) in
+//
+//		}
+//	}
 }
 
 extension TodosView: UITableViewDelegate, UITableViewDataSource {
@@ -75,4 +91,9 @@ extension TodosView: UITableViewDelegate, UITableViewDataSource {
 		
 		return cell
 	}
+	
+//	func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//		let delete = deleteTodo(at: indexPath)
+//		let done = doneTodo(at: indexPath)
+//	}
 }
