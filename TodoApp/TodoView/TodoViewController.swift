@@ -76,6 +76,7 @@ class TodosView: UIViewController {
 			if let err = err {
 				print("Error removing document: \(err)")
 			} else {
+				self.todosTable.reloadData()
 				print("Document successfully removed!")
 			}
 		}
@@ -88,7 +89,7 @@ class TodosView: UIViewController {
 	private func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
 		let todo = todos[indexPath.row]
 		let action = UIContextualAction(style: .normal, title: "Delete") { (action, view, completion) in
-			self.delete(todo.id)
+			self.deleteTodo(todo.id)
 			completion(true)
 		}
 //		action.image = #imageLiteral(resourceName: "trash.png");#imageLiteral(resourceName: "trash@2x.png");#imageLiteral(resourceName: "trash@3x.png")
