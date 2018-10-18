@@ -48,6 +48,7 @@ class TodosView: UIViewController {
 			"id": todo.id,
 			"state": todo.state
 		])
+		todoInput.text = ""
 	}
 	
 	private func listenForTodos() {
@@ -108,6 +109,7 @@ class TodosView: UIViewController {
 	}
 }
 
+// Table view code
 extension TodosView: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return todos.count
